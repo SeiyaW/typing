@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ことわざタイピング | made seiya watanabe</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/vendor/modernizr.custom.min.js"></script>
+    <script src="./js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="./js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="./js/vendor/jquery.qrcode.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/type.js"></script>
+    <script>
+        var typing = new Typing();//タイピングクラス
+
+        // ページ読み込み時に実行する処理
+        window.onload = function(){
+            typing.insertKeyboard("board");
+        }
+    </script>
+</head>
+<body>
+    <nav class="scene-nav" id="nav">
+        <ul>
+            <li><a href="#scene-1">1</a></li>
+            <li><a href="#scene-2">2</a></li>
+            <li><a href="#scene-3">3</a></li>
+        </ul>
+    </nav>
+
+    <div id="page-main-wrap">
+        <div id="page-main">
+
+            <div class="scene" id="scene-1">
+                <h1>ことわざタイピング</h1>
+                <div id="panel">
+                    <div id="count" style="height:20px; margin-top: 50px"></div>
+                    <h1><div id="japanese"></div></h1>
+                    <h2><div id="word"></div></h2>
+                    <div id="scoredis"></div>
+                    <div id="message" style="font-size: 30px;"></div>
+                    <input type="button" id="start_button" value="start" onclick="ready()">
+                </div>
+
+                <!-- キーボード表示 -->
+                <div id="board">
+                </div>
+            </div>
+
+            <div class="scene" id="scene-2">
+                <h1>資格　プログラミング言語</h1>
+                <div class="skil">
+                    <h2>資格</h2>
+                    <p>
+                        2019年 7月 Java Bronze 合格<br>
+                        2020年11月 ITパスポート 合格<br>
+                        2020年12月 ビジネス文書検定2級 合格<br>
+                        2021年 1月 基本情報技術者試験 合格
+                    </p>
+                </div>
+
+                <div class="words">
+                    <h2>プログラミング言語</h2>
+                    <p> HTML/CSS<br>
+                        JavaScript React Node.js<br>
+                        Python<br>
+                        Java<br>
+                        PHP<br>
+                        SQL
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="scene" id="scene-3">
+                <h1>製作者プロフィール</h1>
+                
+                <p class="clearfix">
+                    2019年11月に不動産会社を退社。<br>
+                    退社後、自身に実績、資格、スキルがないことを実感。<br>
+                    何か一つスキルを身につけたいと考え、IT系の専門学校に入学。一から勉強しなおすことにした。<br>
+                    
+                </p>
+                <img src="./image/icon1.png">
+                <footer>
+                    <small>© 2021 Seiya Watanabe</small>
+                </footer>
+            </div>
+                
+        </div>
+    </div>
+
+    <!-- 初めのプログレスとテキスト表示 -->
+    <div class="progress" id="progress">
+        <span class="progress-bar"></span>
+        <span class="progress-text">0%</span>
+    </div>
+
+</body>
+</html>
