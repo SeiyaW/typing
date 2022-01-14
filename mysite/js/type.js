@@ -192,7 +192,7 @@ function finish(){
         message.innerHTML = "頑張りましょう"
     }else if(score <= 60000 && score <= 120000){
         message.innerHTML = "よくできました。"
-    }else if(score <= 200000){
+    }else if(120000 < score){
         message.innerHTML = "大変よくできました。"
     }else{
         message.innerHTML = "頑張りましょう"
