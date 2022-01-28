@@ -176,7 +176,7 @@ var wordlistJapanese = [
 
                     ];//単語リスト(日本語)
                     
-var time_limit = 90;//制限時間
+var time_limit = 45;//制限時間
 var readytime = 3;//開始3秒前
 var score;//スコア変数
 var correct;//正解数
@@ -215,7 +215,7 @@ function gameStart(){
     var gametimer = setInterval(function(){
         count.innerHTML = "残り時間：" + time_remaining;
         time_remaining--;
-        if(time_remaining <= 0){
+        if(time_remaining <= -1){
             clearInterval(gametimer);
             finish();
         }
@@ -238,13 +238,13 @@ function charInsort(){
 // 結果表示関数
 function finish(){
     score = Math.floor(Math.pow(correct,2) * Math.pow((correct/ (correct + mistake)),5));
-    scoredis.innerHTML = "スコア:" + score + "点" + "<hr>正タイプ数" + correct + "<br>ミスタイプ数:" + mistake + "<br>正答率" + (correct / (correct + mistake) * 100).toFixed(1) + "%";
+    scoredis.innerHTML = "スコア : " + score + "点" + "<hr>正タイプ数 : " + correct + "<br>ミスタイプ数 : " + mistake + "<br>正答率 : " + (correct / (correct + mistake) * 100).toFixed(1) + "%";
     // scoreによって文字を表示する
-    if(0 <= score && score < 60000){
+    if(score < 60000){
         message.innerHTML = "頑張りましょう"
-    }else if(score <= 60000 && score <= 120000){
+    }else if(score < 120000){
         message.innerHTML = "よくできました。"
-    }else if(120000 < score){
+    }else if(120000 <= score){
         message.innerHTML = "大変よくできました。"
     }else{
         message.innerHTML = "頑張りましょう"
